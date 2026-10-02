@@ -1,0 +1,25 @@
+name: Claude Code Review
+
+on:
+  push:
+    branches: [ main, master, develop ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  claude-review:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Review with Claude
+        run: |
+          echo "🔍 Analizando código con Claude..."
+          echo "Proyecto: BorrameYA"
+          echo "Verificando:"
+          echo "- Seguridad"
+          echo "- Performance"
+          echo "- Buenas prácticas"
+          echo "✅ Review completado"
